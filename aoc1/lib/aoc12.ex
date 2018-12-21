@@ -24,13 +24,13 @@ defmodule Aoc12 do
           |> Kernel.+(acc)
 
         if !accMap[acc] do
-          Map.put_new(accMap, acc, 1)
+          accMap = Map.put(accMap, acc, 1)
           processNum(index + 1, numsList, acc, accMap)
         else
           acc
         end
       _ -> 
-        processNum(index, numsList, acc, accMap)
+        processNum(index + 1, numsList, acc, accMap)
     end
   end
 end
